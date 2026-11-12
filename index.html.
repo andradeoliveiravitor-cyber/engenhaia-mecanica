@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio digital sobre a profissão de Engenheiro Mecânico para a Feira de Profissões - Vitor Fernando (2C).">
+    <title>Feira de Profissões | Engenharia Mecânica</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://jsdelivr.net">
+
+    <style>
+        /* Paleta de Cores Personalizada (Engenharia / Industrial) */
+        :root {
+            --cor-primaria: #0f172a;   /* Azul Escuro Industrial */
+            --cor-secundaria: #1e293b; /* Cinza Aço */
+            --cor-destaque: #f97316;   /* Laranja Engenharia */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+        }
+
+        .bg-industrial {
+            background-color: var(--cor-primaria) !important;
+        }
+
+        .text-destaque {
+            color: var(--cor-destaque) !important;
+        }
+
+        .bg-destaque {
+            background-color: var(--cor-destaque) !important;
+        }
+
+        .btn-destaque {
+            background-color: var(--cor-destaque);
+            color: #ffffff;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-destaque:hover {
+            background-color: #ea580c;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Banner Principal (Hero) */
+        .hero-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.92)), 
+                        url('https://unsplash.com') center/cover no-repeat;
+            padding: 6rem 0;
+        }
+
+        /* Título das Seções */
+        .titulo-secao {
+            border-left: 5px solid var(--cor-destaque);
+            padding-left: 15px;
+            color: var(--cor-primaria);
+            font-weight: 700;
+        }
+
+        /* Cards da Linha do Tempo */
+        .card-historia {
+            border: none;
+            border-top: 4px solid var(--cor-destaque);
+            transition: transform 0.3s ease;
+        }
+
+        .card-historia:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO E NAVEGAÇÃO (SEMÂNTICO + BOOTSTRAP NAVBAR) -->
+    <header class="sticky-top shadow">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-industrial py-3" aria-label="Navegação Principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="#home">
+                    <i class="bi bi-gear-wide-connected text-destaque me-2"></i>FEIRA DE <span class="text-destaque">PROFISSÕES</span>
+                </a>
+                
+                <!-- Botão Hambúrguer para Celular -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links do Menu -->
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">A Profissão</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#historia">História</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#mercado">Mercado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#creditos">Créditos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- APRESENTAÇÃO DA PROFISSÃO (HERO / HOME) -->
+    <section id="home" class="hero-section text-white text-center">
+        <div class="container">
+            <span class="badge bg-destaque text-uppercase px-3 py-2 rounded-pill mb-3 fs-6">
+                Portfólio Digital • Stand Oficial
+            </span>
+            <h1 class="display-3 fw-bold mb-3">Engenheiro Mecânico</h1>
+            <p class="lead fst-italic text-light mb-4 mx-auto" style="max-width: 700px;">
+                "Transformando ideias e leis da física na força que move a indústria e o mundo moderno."
+            </p>
+            <a href="#sobre" class="btn btn-destaque btn-lg px-4 py-2 shadow">
+                Explorar Carreira <i class="bi bi-arrow-down-circle ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container my-5">
+
+        <!-- SEÇÃO 1: SOBRE A PROFISSÃO -->
+        <section id="sobre" class="py-4">
+            <h2 class="titulo-secao mb-2">O que faz um Engenheiro Mecânico?</h2>
+            <p class="text-muted mb-4 ps-3">Rotina profissional, principais atribuições e importância para a sociedade.</p>
+
+            <div class="row g-4 align-items-center">
+                <article class="col-lg-6">
+                    <p class="fs-6 text-justify">
+                        O <strong>Engenheiro Mecânico</strong> é o profissional responsável por projetar, desenvolver, construir e realizar a manutenção de máquinas, equipamentos, veículos, sistemas de refrigeração e linhas de produção industrial.
+                    </p>
+                    <p class="fs-6 text-justify">
+                        Sua rotina une o trabalho em escritório — utilizando softwares avançados de modelagem 3D (CAD) e simulação computacional — com a atuação prática no chão de fábrica, laboratórios de testes e gestão de equipes técnicas.
+                    </p>
+                    <p class="fs-6 text-justify">
+                        <strong>Importância para a sociedade:</strong> Sem a engenharia mecânica, não existiriam meios de transporte eficientes, usinas geradoras de energia, equipamentos hospitalares de precisão ou a produção em larga escala de bens essenciais.
+                    </p>
+
+                    <ul class="list-group list-group-flush shadow-sm rounded mt-3">
+                        <li class="list-group-item">
+                            <i class="bi bi-check-circle-fill text-destaque me-2"></i>
+                            <strong>Projetos e Protótipos:</strong> Criação de peças, motores e sistemas mecânicos.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="bi bi-check-circle-fill text-destaque me-2"></i>
+                            <strong>Termodinâmica e Energia:</strong> Sistemas de climatização, turbinas e energias limpas.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="bi bi-check-circle-fill text-destaque me-2"></i>
+                            <strong>Automação e Robótica:</strong> Otimização de linhas de montagem na Indústria 4.0.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="bi bi-check-circle-fill text-destaque me-2"></i>
+                            <strong>Manutenção e Segurança:</strong> Operação contínua e segura de máquinas pesadas.
+                        </li>
+                    </ul>
+                </article>
+
+                <div class="col-lg-6">
+                    <img src="https://unsplash.com" 
+                         class="img-fluid rounded-3 shadow" 
+                         alt="Engenheiro mecânico analisando projetos e engrenagens industriais" 
+                         loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <!-- SEÇÃO 2: FATOS HISTÓRICOS -->
+        <section id="historia" class="py-4">
+            <h2 class="titulo-secao mb-2">Fatos Históricos e Evolução</h2>
+            <p class="text-muted mb-4 ps-3">Da invenção da roda à inteligência artificial na indústria (Integração com História).</p>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <article class="card h-100 shadow-sm card-historia">
+                        <div class="card-body">
+                            <span class="badge bg-light text-destaque fw-bold mb-2">Antiguidade • Séc. III a.C.</span>
+                            <h3 class="h5 card-title fw-bold text-dark">Bases da Mecânica</h3>
+                            <p class="card-text small">
+                                Arquimedes na Grécia Antiga e engenheiros chineses criam os primeiros mecanismos fundamentais, como alavancas, polias, engrenagens e bombas hidráulicas.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm card-historia">
+                        <div class="card-body">
+                            <span class="badge bg-light text-destaque fw-bold mb-2">Século XVIII • 1769</span>
