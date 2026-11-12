@@ -1,604 +1,452 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfólio digital sobre Engenharia Mecânica para a Feira de Profissões
-Vitor Fernando (2C).">
-<title>Feira de Profissões | Engenharia Mecânica</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio digital sobre Engenharia Mecânica para a Feira de Profissões - Vitor Fernando (2C).">
+    <title>Feira de Profissões | Engenharia Mecânica</title>
 
-<!
--Bootstrap 5.3 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css&quot; rel="stylesheet">
-<!
--Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"&gt;
-<style>
-:root {
---cor-primaria: #0f172a;
---cor-secundaria: #1e293b;
---cor-destaque: #f97316;
-}
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-html {
-scroll-behavior: smooth;
-scroll-padding-top: 85px;
-}
+    <style>
+        :root {
+            --cor-primaria: #0f172a;
+            --cor-secundaria: #1e293b;
+            --cor-destaque: #f97316;
+        }
 
-body {
-background-color: #f8fafc;
-color: #334155;
-font-family: Arial, sans-serif;
-}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
 
-.bg-industrial {
-background-color: var(--cor-primaria) !important;
-}
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            font-family: Arial, sans-serif;
+        }
 
-.text-destaque {
-color: var(--cor-destaque) !important;
-}
+        .bg-industrial { background-color: var(--cor-primaria) !important; }
+        .text-destaque { color: var(--cor-destaque) !important; }
+        .bg-destaque { background-color: var(--cor-destaque) !important; }
 
-.bg-destaque {
-background-color: var(--cor-destaque) !important;
-}
+        .btn-destaque {
+            background-color: var(--cor-destaque);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-.btn-destaque {
-background-color: var(--cor-destaque);
-color: white;
-border: none;
-font-weight: 600;
-transition: 0.3s;
-}
+        .btn-destaque:hover {
+            background-color: #ea580c;
+            color: #fff;
+            transform: translateY(-2px);
+        }
 
-.btn-destaque:hover {
-background-color: #ea580c;
-color: white;
-transform: translateY(-2px);
-}
+        .hero-section {
+            background:
+                linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.92)),
+                url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80")
+                center/cover no-repeat;
+            padding: 110px 0;
+        }
 
-.hero-section {
-background:
-linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.92)),
-url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80&#39;)
-center/cover no-repeat;
-padding: 110px 0;
-}
+        .titulo-secao {
+            border-left: 5px solid var(--cor-destaque);
+            padding-left: 15px;
+            color: var(--cor-primaria);
+            font-weight: 700;
+        }
 
-.titulo-secao {
-border-left: 5px solid var(--cor-destaque);
-padding-left: 15px;
-color: var(--cor-primaria);
-font-weight: 700;
-}
+        .card-historia {
+            border: none;
+            border-top: 4px solid var(--cor-destaque);
+            transition: transform 0.3s;
+        }
 
-.card-historia {
-border: none;
-border-top: 4px solid var(--cor-destaque);
-transition: transform 0.3s;
-}
+        .card-historia:hover,
+        .card-dados:hover {
+            transform: translateY(-5px);
+        }
 
-.card-historia:hover {
-transform: translateY(-5px);
-}
+        .imagem-profissao {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+        }
 
-.imagem-profissao {
-width: 100%;
-height: 390px;
-object-fit: cover;
-}
+        .card-dados {
+            border: none;
+            border-bottom: 4px solid var(--cor-destaque);
+            transition: transform 0.3s;
+        }
 
-.card-dados {
-border: none;
-border-bottom: 4px solid var(--cor-destaque);
-transition: 0.3s;
-}
+        footer { background-color: var(--cor-primaria); }
 
-.card-dados:hover {
-transform: translateY(-5px);
-}
-
-footer {
-background-color: var(--cor-primaria);
-}
-</style>
+        @media (max-width: 576px) {
+            .hero-section { padding: 80px 0; }
+            .hero-section h1 { font-size: 2.4rem; }
+            .imagem-profissao { height: 280px; }
+        }
+    </style>
 </head>
 
 <body>
-
-<!
--MENU -->
-<header class="sticky-top shadow">
-<nav class="navbar navbar-expand-lg navbar-dark bg-industrial py-3">
-<div class="container">
-<a class="navbar-brand fw-bold fs-4" href="#home">
-<i class="bi bi-gear-wide-connected text-destaque me-2"></i>
-FEIRA DE <span class="text-destaque">PROFISSÕES</span>
-</a>
-
-<button class="navbar-toggler" type="button"
-data-bs-toggle="collapse"
-data-bs-target="#menuPrincipal"
-aria-controls="menuPrincipal"
-aria-expanded="false"
-aria-label="Abrir menu">
-
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="menuPrincipal">
-<ul class="navbar-nav ms-auto fw-medium">
-
-<li class="nav-item">
-<a class="nav-link active" href="#home">Início</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#sobre">A Profissão</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#historia">História</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#mercado">Mercado</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#creditos">Créditos</a>
-</li>
-
-</ul>
-</div>
-</div>
-</nav>
-</header>
-
-<!
--INÍCIO -->
-<section id="home" class="hero-section text-white text-center">
-<div class="container">
-<span class="badge bg-destaque px-3 py-2 rounded-pill mb-3 fs-6">
-Portfólio Digital • Stand Oficial
-</span>
-
-<h1 class="display-3 fw-bold mb-3">
-Engenheiro Mecânico
-</h1>
-
-<p class="lead fst-italic text-light mb-4 mx-auto"
-style="max-width: 700px;">
-"Transformando ideias e leis da física na força que move a indústria e o mundo moderno."
-</p>
-
-<a href="#sobre" class="btn btn-destaque btn-lg px-4 py-2 shadow">
-Explorar Carreira
-<i class="bi bi-arrow-down-circle ms-2"></i>
-</a>
-
-</div>
-</section>
-
-<main class="container my-5">
-
-<!
--PROFISSÃO -->
-<section id="sobre" class="py-4">
-<h2 class="titulo-secao mb-2">
-O que faz um Engenheiro Mecânico?
-</h2>
-
-<p class="text-muted mb-4 ps-3">
-Rotina profissional, principais atribuições e importância para a sociedade.
-</p>
-
-<div class="row g-4 align-items-center">
-
-<article class="col-lg-6">
-
-<p>
-O <strong>Engenheiro Mecânico</strong> é o profissional responsável por projetar, desenvolver, construir e realizar a manutenção de máquinas, equipamentos, veículos e sistemas industriais.
-</p>
-
-<p>
-Sua rotina envolve o uso de softwares de modelagem 3D, simulações e atividades práticas em fábricas, laboratórios e empresas.
-</p>
-
-<p>
-<strong>Importância para a sociedade:</strong>
-esse profissional contribui para o desenvolvimento dos meios de transporte, da produção industrial, da geração de energia e de equipamentos utilizados no dia a dia.
-</p>
-
-<ul class="list-group list-group-flush shadow-sm rounded mt-3">
-
-<li class="list-group-item">
-<i class="bi bi-check-circle-fill text-destaque me-2"></i>
-<strong>Projetos e Protótipos:</strong>
-criação de peças, motores e máquinas.
-</li>
-
-<li class="list-group-item">
-<i class="bi bi-check-circle-fill text-destaque me-2"></i>
-<strong>Energia:</strong>
-sistemas de climatização, turbinas e energias renováveis.
-</li>
-
-<li class="list-group-item">
-<i class="bi bi-check-circle-fill text-destaque me-2"></i>
-<strong>Automação:</strong>
-desenvolvimento de sistemas industriais e robôs.
-</li>
-
-<li class="list-group-item">
-<i class="bi bi-check-circle-fill text-destaque me-2"></i>
-<strong>Manutenção:</strong>
-conservação e segurança de máquinas.
-</li>
-
-</ul>
-</article>
-
-<div class="col-lg-6">
-<img
-src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80&quot;
-class="img-fluid rounded-3 shadow imagem-profissao"
-alt="Profissional trabalhando em ambiente industrial"
-loading="lazy">
-</div>
-
-</div>
-</section>
-
-<hr class="my-5">
-
-<!
--HISTÓRIA -->
-<section id="historia" class="py-4">
-<h2 class="titulo-secao mb-2">
-Fatos Históricos e Evolução
-</h2>
-
-<p class="text-muted mb-4 ps-3">
-Da invenção da roda à inteligência artificial na indústria.
-</p>
-
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-
-<div class="col">
-<article class="card h-100 shadow-sm card-historia">
-<div class="card-body">
-
-<span class="badge bg-light text-destaque mb-2">
-Antiguidade • Séc. III a.C.
-</span>
-
-<h3 class="h5 fw-bold text-dark">
-Bases da Mecânica
-</h3>
-
-<p class="card-text small">
-Arquimedes e outros estudiosos desenvolveram mecanismos importantes, como alavancas, polias e engrenagens.
-</p>
-
-</div>
-</article>
-</div>
-
-<div class="col">
-<article class="card h-100 shadow-sm card-historia">
-<div class="card-body">
-
-<span class="badge bg-light text-destaque mb-2">
-Século XVIII • 1769
-</span>
-
-<h3 class="h5 fw-bold text-dark">
-Revolução Industrial
-</h3>
-
-<p class="card-text small">
-O aperfeiçoamento da máquina a vapor por James Watt ajudou a transformar as fábricas e os transportes.
-</p>
-
-</div>
-</article>
-</div>
-
-<div class="col">
-<article class="card h-100 shadow-sm card-historia">
-<div class="card-body">
-
-<span class="badge bg-light text-destaque mb-2">
-Século XX • 1908
-</span>
-
-<h3 class="h5 fw-bold text-dark">
-Linha de Montagem
-</h3>
-
-<p class="card-text small">
-A produção em série e o desenvolvimento dos motores impulsionaram a indústria automobilística e aeroespacial.
-</p>
-
-</div>
-</article>
-</div>
-
-<div class="col">
-<article class="card h-100 shadow-sm card-historia">
-<div class="card-body">
-
-<span class="badge bg-light text-destaque mb-2">
-Século XXI • Hoje
-</span>
-
-<h3 class="h5 fw-bold text-dark">
-Indústria 4.0
-</h3>
-
-<p class="card-text small">
-A engenharia utiliza robôs, impressão 3D, inteligência artificial e veículos elétricos.
-</p>
-
-</div>
-</article>
-</div>
-
-</div>
-</section>
-
-<hr class="my-5">
-
-<!
--MERCADO -->
-<section id="mercado" class="py-4">
-<h2 class="titulo-secao mb-2">
-Panorama Atual e Mercado de Trabalho
-</h2>
-
-<p class="text-muted mb-4 ps-3">
-Formação, possibilidades profissionais e áreas de atuação.
-</p>
-
-<div class="row g-4 mb-5">
-
-<div class="col-md-6 col-lg-3">
-<div class="card card-dados shadow-sm h-100 text-center p-3">
-<div class="card-body">
-<h2 class="text-destaque fw-bold">R$ 11.894</h2>
-<p class="mb-0">Média salarial informada no levantamento original (CLT/CAGED).</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-6 col-lg-3">
-<div class="card card-dados shadow-sm h-100 text-center p-3">
-<div class="card-body">
-<h2 class="text-destaque fw-bold">R$ 10.125</h2>
-<p class="mb-0">Valor de referência informado no levantamento original para o piso salarial.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-6 col-lg-3">
-<div class="card card-dados shadow-sm h-100 text-center p-3">
-<div class="card-body">
-<h2 class="text-destaque fw-bold">5 Anos</h2>
-<p class="mb-0">Duração média da graduação em Engenharia Mecânica.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-6 col-lg-3">
-<div class="card card-dados shadow-sm h-100 text-center p-3">
-<div class="card-body">
-<h2 class="text-destaque fw-bold">Diversas Áreas</h2>
-<p class="mb-0">Oportunidades em automação, indústria e energia.</p>
-</div>
-</div>
-</div>
-
-</div>
-
-<h3 class="fw-bold text-dark mb-4">
-Principais Setores de Empregabilidade
-</h3>
-
-<div class="mb-3">
-<div class="d-flex justify-content-between">
-<strong>Indústria Automotiva e Autopeças</strong>
-<strong>32%</strong>
-</div>
-<div class="progress">
-<div class="progress-bar bg-destaque" style="width: 32%"></div>
-</div>
-</div>
-
-<div class="mb-3">
-<div class="d-flex justify-content-between">
-<strong>Energia, Petróleo, Gás e Renováveis</strong>
-<strong>26%</strong>
-</div>
-<div class="progress">
-<div class="progress-bar bg-destaque" style="width: 26%"></div>
-</div>
-</div>
-
-<div class="mb-3">
-<div class="d-flex justify-content-between">
-<strong>Metalurgia e Manufatura</strong>
-<strong>22%</strong>
-</div>
-<div class="progress">
-<div class="progress-bar bg-destaque" style="width: 22%"></div>
-</div>
-</div>
-
-<div class="mb-5">
-<div class="d-flex justify-content-between">
-<strong>Aeroespacial, Naval e Agroindústria</strong>
-<strong>20%</strong>
-</div>
-<div class="progress">
-<div class="progress-bar bg-destaque" style="width: 20%"></div>
-</div>
-</div>
-
-<!
--DISCIPLINAS -->
-<h3 class="fw-bold text-dark mb-4">
-Conexão com as Disciplinas Escolares
-</h3>
-<div class="row g-3">
-
-<div class="col-md-4">
-<div class="card shadow-sm h-100 p-3">
-<div class="card-body">
-<i class="bi bi-lightning-charge-fill fs-2 text-destaque"></i>
-<h4 class="h5 fw-bold mt-2">Física</h4>
-<p class="small mb-0">
-Leis de Newton, termodinâmica e mecânica dos fluidos.
-</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card shadow-sm h-100 p-3">
-<div class="card-body">
-<i class="bi bi-calculator-fill fs-2 text-destaque"></i>
-<h4 class="h5 fw-bold mt-2">Matemática</h4>
-<p class="small mb-0">
-Cálculo, geometria, trigonometria e estatística.
-</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card shadow-sm h-100 p-3">
-<div class="card-body">
-<i class="bi bi-flask-fill fs-2 text-destaque"></i>
-<h4 class="h5 fw-bold mt-2">Química</h4>
-<p class="small mb-0">
-Ligas metálicas, polímeros, combustíveis e materiais.
-</p>
-</div>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<hr class="my-5">
-
-<!
--CRÉDITOS -->
-<section id="creditos" class="py-4">
-<h2 class="titulo-secao mb-4">
-Identificação e Créditos
-</h2>
-
-<div class="row g-4">
-
-<div class="col-md-6">
-<div class="card shadow-sm border-0 h-100">
-<div class="card-body p-4">
-
-<h3 class="h5 fw-bold mb-3">
-<i class="bi bi-person-badge text-destaque me-2"></i>
-Identificação do Aluno
-</h3>
-
-<p><strong>Nome:</strong> Vitor Fernando</p>
-<p><strong>Número:</strong> 25</p>
-<p><strong>Turma:</strong> 2º Ano C (2C)</p>
-
-</div>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="card shadow-sm border-0 h-100">
-<div class="card-body p-4">
-
-<h3 class="h5 fw-bold mb-3">
-<i class="bi bi-info-circle text-destaque me-2"></i>
-Dados do Projeto
-</h3>
-
-<p><strong>Evento:</strong> Feira de Profissões</p>
-<p><strong>Profissão:</strong> Engenheiro Mecânico</p>
-<p><strong>Tecnologias:</strong> HTML5, CSS3 e Bootstrap 5</p>
-
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="mt-4">
-<h3 class="h5 fw-bold mb-3">Links e Referências</h3>
-
-<ul class="list-group shadow-sm">
-
-<li class="list-group-item">
-<i class="bi bi-globe text-destaque me-2"></i>
-<a href="https://www.confea.org.br/&quot;
-target="_blank" rel="noopener noreferrer">
-Portal CONFEA / CREA
-</a>
-</li>
-
-<li class="list-group-item">
-<i class="bi bi-bar-chart text-destaque me-2"></i>
-<a href="https://www.gov.br/trabalho-e-emprego/&quot;
-target="_blank" rel="noopener noreferrer">
-Ministério do Trabalho e Emprego
-</a>
-</li>
-
-<li class="list-group-item">
-<i class="bi bi-book text-destaque me-2"></i>
-<a href="https://www.gov.br/mec/pt-br&quot;
-target="_blank" rel="noopener noreferrer">
-Ministério da Educação
-</a>
-</li>
-
-</ul>
-</div>
-
-</section>
-
-</main>
-
-<!
--RODAPÉ -->
-<footer class="text-white text-center py-4 mt-5">
-<div class="container">
-
-<a href="#home" class="btn btn-destaque mb-3">
-<i class="bi bi-arrow-up-circle me-2"></i>
-Voltar ao Topo
-</a>
-
-<p class="mb-1">
-© 2026 • Desenvolvido por Vitor Fernando
-</p>
-
-<p class="small text-secondary mb-0">
-Nº 25
-Turma 2C | Feira de Profissões
-</p>
-</div>
-
-</footer>
-
-<!
--Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script&gt;
+    <!-- MENU -->
+    <header class="sticky-top shadow">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-industrial py-3" aria-label="Navegação principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="#home">
+                    <i class="bi bi-gear-wide-connected text-destaque me-2"></i>
+                    FEIRA DE <span class="text-destaque">PROFISSÕES</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                    aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto fw-medium">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sobre">A Profissão</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#historia">História</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#mercado">Mercado</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#creditos">Créditos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- INÍCIO -->
+    <section id="home" class="hero-section text-white text-center">
+        <div class="container">
+            <span class="badge bg-destaque px-3 py-2 rounded-pill mb-3 fs-6">
+                Portfólio Digital • Stand Oficial
+            </span>
+            <h1 class="display-3 fw-bold mb-3">Engenheiro Mecânico</h1>
+            <p class="lead fst-italic text-light mb-4 mx-auto" style="max-width: 700px;">
+                "Transformando ideias e leis da física na força que move a indústria e o mundo moderno."
+            </p>
+            <a href="#sobre" class="btn btn-destaque btn-lg px-4 py-2 shadow">
+                Explorar Carreira <i class="bi bi-arrow-down-circle ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <!-- PROFISSÃO -->
+        <section id="sobre" class="py-4">
+            <h2 class="titulo-secao mb-2">O que faz um Engenheiro Mecânico?</h2>
+            <p class="text-muted mb-4 ps-3">
+                Rotina profissional, principais atribuições e importância para a sociedade.
+            </p>
+
+            <div class="row g-4 align-items-center">
+                <article class="col-lg-6">
+                    <p>
+                        O <strong>Engenheiro Mecânico</strong> é o profissional responsável por projetar,
+                        desenvolver, construir e realizar a manutenção de máquinas, equipamentos,
+                        veículos e sistemas industriais.
+                    </p>
+                    <p>
+                        Sua rotina envolve o uso de softwares de modelagem 3D, simulações e atividades
+                        práticas em fábricas, laboratórios e empresas.
+                    </p>
+                    <p>
+                        <strong>Importância para a sociedade:</strong> esse profissional contribui para
+                        o desenvolvimento dos meios de transporte, da produção industrial, da geração
+                        de energia e de equipamentos utilizados no dia a dia.
+                    </p>
+
+                    <ul class="list-group list-group-flush shadow-sm rounded mt-3">
+                        <li class="list-group-item">
+                            <i class="bi bi-check-circle-fill text-destaque me-2"></i>
+                            <strong>Projetos e Protótipos:</strong> criação de peças, motores e máquinas.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="bi bi-check-circle-fill text-destaque me-2"></i>
+                            <strong>Energia:</strong> sistemas de climatização, turbinas e energias renováveis.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="bi bi-check-circle-fill text-destaque me-2"></i>
+                            <strong>Automação:</strong> desenvolvimento de sistemas industriais e robôs.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="bi bi-check-circle-fill text-destaque me-2"></i>
+                            <strong>Manutenção:</strong> conservação e segurança de máquinas.
+                        </li>
+                    </ul>
+                </article>
+
+                <div class="col-lg-6">
+                    <img
+                        src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+                        class="img-fluid rounded-3 shadow imagem-profissao"
+                        alt="Profissional trabalhando em ambiente industrial"
+                        loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <!-- HISTÓRIA -->
+        <section id="historia" class="py-4">
+            <h2 class="titulo-secao mb-2">Fatos Históricos e Evolução</h2>
+            <p class="text-muted mb-4 ps-3">
+                Da invenção da roda à inteligência artificial na indústria.
+            </p>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <article class="card h-100 shadow-sm card-historia">
+                        <div class="card-body">
+                            <span class="badge bg-light text-destaque mb-2">Antiguidade • Séc. III a.C.</span>
+                            <h3 class="h5 fw-bold text-dark">Bases da Mecânica</h3>
+                            <p class="card-text small">
+                                Arquimedes e outros estudiosos desenvolveram mecanismos importantes,
+                                como alavancas, polias e engrenagens.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm card-historia">
+                        <div class="card-body">
+                            <span class="badge bg-light text-destaque mb-2">Século XVIII • 1769</span>
+                            <h3 class="h5 fw-bold text-dark">Revolução Industrial</h3>
+                            <p class="card-text small">
+                                O aperfeiçoamento da máquina a vapor por James Watt ajudou a transformar
+                                as fábricas e os transportes.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm card-historia">
+                        <div class="card-body">
+                            <span class="badge bg-light text-destaque mb-2">Século XX • 1908</span>
+                            <h3 class="h5 fw-bold text-dark">Linha de Montagem</h3>
+                            <p class="card-text small">
+                                A produção em série e o desenvolvimento dos motores impulsionaram
+                                a indústria automobilística e aeroespacial.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm card-historia">
+                        <div class="card-body">
+                            <span class="badge bg-light text-destaque mb-2">Século XXI • Hoje</span>
+                            <h3 class="h5 fw-bold text-dark">Indústria 4.0</h3>
+                            <p class="card-text small">
+                                A engenharia utiliza robôs, impressão 3D, inteligência artificial
+                                e veículos elétricos.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <!-- MERCADO -->
+        <section id="mercado" class="py-4">
+            <h2 class="titulo-secao mb-2">Panorama Atual e Mercado de Trabalho</h2>
+            <p class="text-muted mb-4 ps-3">
+                Formação, possibilidades profissionais e áreas de atuação.
+            </p>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-dados shadow-sm h-100 text-center p-3">
+                        <div class="card-body">
+                            <h2 class="text-destaque fw-bold">R$ 11.894</h2>
+                            <p class="mb-0">Média salarial informada no levantamento original (CLT/CAGED).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-dados shadow-sm h-100 text-center p-3">
+                        <div class="card-body">
+                            <h2 class="text-destaque fw-bold">R$ 10.125</h2>
+                            <p class="mb-0">Valor de referência informado no levantamento original para o piso salarial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-dados shadow-sm h-100 text-center p-3">
+                        <div class="card-body">
+                            <h2 class="text-destaque fw-bold">5 Anos</h2>
+                            <p class="mb-0">Duração média da graduação em Engenharia Mecânica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-dados shadow-sm h-100 text-center p-3">
+                        <div class="card-body">
+                            <h2 class="text-destaque fw-bold">Diversas Áreas</h2>
+                            <p class="mb-0">Oportunidades em automação, indústria e energia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="fw-bold text-dark mb-4">Principais Setores de Empregabilidade</h3>
+
+            <div class="mb-3">
+                <div class="d-flex justify-content-between">
+                    <strong>Indústria Automotiva e Autopeças</strong><strong>32%</strong>
+                </div>
+                <div class="progress" role="progressbar" aria-label="Indústria Automotiva e Autopeças" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-destaque" style="width: 32%"></div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="d-flex justify-content-between">
+                    <strong>Energia, Petróleo, Gás e Renováveis</strong><strong>26%</strong>
+                </div>
+                <div class="progress" role="progressbar" aria-label="Energia, Petróleo, Gás e Renováveis" aria-valuenow="26" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-destaque" style="width: 26%"></div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="d-flex justify-content-between">
+                    <strong>Metalurgia e Manufatura</strong><strong>22%</strong>
+                </div>
+                <div class="progress" role="progressbar" aria-label="Metalurgia e Manufatura" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-destaque" style="width: 22%"></div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <div class="d-flex justify-content-between">
+                    <strong>Aeroespacial, Naval e Agroindústria</strong><strong>20%</strong>
+                </div>
+                <div class="progress" role="progressbar" aria-label="Aeroespacial, Naval e Agroindústria" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-destaque" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <!-- DISCIPLINAS -->
+            <h3 class="fw-bold text-dark mb-4">Conexão com as Disciplinas Escolares</h3>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100 p-3">
+                        <div class="card-body">
+                            <i class="bi bi-lightning-charge-fill fs-2 text-destaque"></i>
+                            <h4 class="h5 fw-bold mt-2">Física</h4>
+                            <p class="small mb-0">Leis de Newton, termodinâmica e mecânica dos fluidos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100 p-3">
+                        <div class="card-body">
+                            <i class="bi bi-calculator-fill fs-2 text-destaque"></i>
+                            <h4 class="h5 fw-bold mt-2">Matemática</h4>
+                            <p class="small mb-0">Cálculo, geometria, trigonometria e estatística.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100 p-3">
+                        <div class="card-body">
+                            <i class="bi bi-flask-fill fs-2 text-destaque"></i>
+                            <h4 class="h5 fw-bold mt-2">Química</h4>
+                            <p class="small mb-0">Ligas metálicas, polímeros, combustíveis e materiais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <!-- CRÉDITOS -->
+        <section id="creditos" class="py-4">
+            <h2 class="titulo-secao mb-4">Identificação e Créditos</h2>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-3">
+                                <i class="bi bi-person-badge text-destaque me-2"></i>
+                                Identificação do Aluno
+                            </h3>
+                            <p><strong>Nome:</strong> Vitor Fernando</p>
+                            <p><strong>Número:</strong> 25</p>
+                            <p><strong>Turma:</strong> 2º Ano C (2C)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-3">
+                                <i class="bi bi-info-circle text-destaque me-2"></i>
+                                Dados do Projeto
+                            </h3>
+                            <p><strong>Evento:</strong> Feira de Profissões</p>
+                            <p><strong>Profissão:</strong> Engenheiro Mecânico</p>
+                            <p><strong>Tecnologias:</strong> HTML5, CSS3 e Bootstrap 5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h3 class="h5 fw-bold mb-3">Links e Referências</h3>
+                <ul class="list-group shadow-sm">
+                    <li class="list-group-item">
+                        <i class="bi bi-globe text-destaque me-2"></i>
+                        <a href="https://www.confea.org.br/" target="_blank" rel="noopener noreferrer">Portal CONFEA / CREA</a>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="bi bi-bar-chart text-destaque me-2"></i>
+                        <a href="https://www.gov.br/trabalho-e-emprego/" target="_blank" rel="noopener noreferrer">Ministério do Trabalho e Emprego</a>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="bi bi-book text-destaque me-2"></i>
+                        <a href="https://www.gov.br/mec/pt-br" target="_blank" rel="noopener noreferrer">Ministério da Educação</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="text-white text-center py-4 mt-5">
+        <div class="container">
+            <a href="#home" class="btn btn-destaque mb-3">
+                <i class="bi bi-arrow-up-circle me-2"></i>Voltar ao Topo
+            </a>
+            <p class="mb-1">© 2026 • Desenvolvido por Vitor Fernando</p>
+            <p class="small text-secondary mb-0">Nº 25 • Turma 2C | Feira de Profissões</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
